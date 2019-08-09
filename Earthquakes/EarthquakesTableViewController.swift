@@ -133,7 +133,7 @@ class EarthquakesTableViewController: UITableViewController {
         getEarthquakes()
     }
     
-    private func getEarthquakes(userInitiated: Bool = true) {
+    private func getEarthquakes(_ userInitiated: Bool = true) {
         if let context = fetchedResultsController?.managedObjectContext {
             let getEarthquakesOperation = GetEarthquakesOperation(context: context) {
                 DispatchQueue.main.async {

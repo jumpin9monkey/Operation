@@ -206,10 +206,12 @@ class OperationCustom: Operation {
         observers.append(observer)
     }
     
-    override func addDependency(_ operation: Operation) {
+    
+    override func addDependency(_ op: Operation){
+       
         assert(state < .Executing, "Dependencies cannot be modified after execution has begun.")
 
-        super.addDependency(operation)
+        super.addDependency(op)
     }
     
     

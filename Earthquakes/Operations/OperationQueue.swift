@@ -84,10 +84,10 @@ class OperationQueueCustom: OperationQueue {
                 // Set up the mutual exclusivity dependencies.
                 let exclusivityController = ExclusivityController.sharedExclusivityController
 
-                exclusivityController.addOperation(operation: opCustom, categories: concurrencyCategories)
+                exclusivityController.addOperation(opCustom, categories: concurrencyCategories)
                 
                 opCustom.addObserver(BlockObserver { operation, _ in
-                    exclusivityController.removeOperation(operation: operation, categories: concurrencyCategories)
+                    exclusivityController.removeOperation(operation, categories: concurrencyCategories)
                 })
             }
             
